@@ -3,8 +3,12 @@ import requests
 endpoint = "https://httpbin.org/status/200/"
 endpoint = "https://httpbin.org/anything"
 
-get_response = requests.get(endpoint, data={"query": "Hello World"}) # HTTP request
+endpoint = "http://localhost:8000/api/"
 
-print(get_response.text) #print raw response
+get_response = requests.get(endpoint, params={"abc": 123}, json={"query": "Hello world"}) # HTTP request
+
+# print(get_response.text) #print raw response
+
+# print(get_response.status_code)
 
 print(get_response.json())
